@@ -1,13 +1,15 @@
-// @ts-check
-import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+import icon from 'astro-icon';
+import solid from '@astrojs/solid-js';
 
-// https://astro.build/config
 export default defineConfig({
-site: 'https://vmontesgarcia.github.io',
+  site: 'https://vmontesgarcia.github.io',
   base: '/PokeAstro/',
   output: 'static',
-    vite: {
-    plugins: [tailwindcss()],
-  },
+  integrations: [
+    tailwind(),
+    icon(),
+    solid(),
+  ],
 });
